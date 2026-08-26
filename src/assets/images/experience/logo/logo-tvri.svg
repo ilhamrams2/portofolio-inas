@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" fill="none">
+  <rect width="180" height="50" rx="8" fill="#0C347A"/>
+  <text x="35" y="33" fill="#FFFFFF" font-family="'Space Grotesk', 'Arial Black', sans-serif" font-weight="900" font-size="24" letter-spacing="3">TVRI</text>
+  <line x1="108" y1="12" x2="108" y2="38" stroke="#3B82F6" stroke-width="2"/>
+  <text x="116" y="24" fill="#93C5FD" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="9" letter-spacing="1">NASIONAL</text>
+  <text x="116" y="35" fill="#E2E8F0" font-family="'Space Grotesk', sans-serif" font-weight="600" font-size="8" letter-spacing="0.5">NEWS</text>
+</svg>

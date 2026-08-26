@@ -24,6 +24,13 @@ import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
 // Sparks Preschool Gallery Images
 import sparkActivityImg from '../assets/images/experience/spark/WhatsApp Image 2026-08-26 at 21.14.43 (2).jpeg';
 
+// TVRI Gallery Images
+import tvriCoverImg from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.32.jpeg';
+import tvriImg2 from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.31 (1).jpeg';
+import tvriImg3 from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.30.jpeg';
+import tvriImg4 from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.31 (2).jpeg';
+import logoTvri from '../assets/images/experience/logo/logo-tvri.svg';
+
 // SMK Prestasi Prima Gallery Images
 import smkImg1 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.40 (1).jpeg';
 import smkImg2 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.40.jpeg';
@@ -110,6 +117,30 @@ const experiencesData = [
       { src: smkImg5, alt: 'SMK Prestasi Prima Camera & Equipment Practice' },
       { src: smkImg6, alt: 'SMK Prestasi Prima Classroom Session' },
       { src: smkImg7, alt: 'SMK Prestasi Prima Broadcasting Activity' }
+    ]
+  },
+  {
+    id: 4,
+    role: 'Reporter for Online News Portal',
+    employmentType: 'Internship',
+    period: 'August – October 2024',
+    location: 'Jakarta, Indonesia',
+    year: '2024',
+    icon: <Mic size={14} />,
+    companyLogo: logoTvri,
+    image: tvriCoverImg,
+    companyName: 'TVRI NASIONAL',
+    description: 'Monitored daily news developments and produced online news articles from field reporting and ministerial press conferences.',
+    details: 'Served as an Online News Portal Reporter at TVRI Nasional covering major press conferences, ministerial briefings, and breaking national developments.',
+    responsibilities: [
+      'Monitored daily news developments to support timely online reporting',
+      'Produced online news articles from interviews and field reporting'
+    ],
+    gallery: [
+      { src: tvriCoverImg, alt: 'TVRI Field Coverage at KPK' },
+      { src: tvriImg2, alt: 'TVRI Press Conference Munas 2024' },
+      { src: tvriImg3, alt: 'TVRI Reporting at Kemenko PMK' },
+      { src: tvriImg4, alt: 'TVRI Coverage at Kominfo Press Room' }
     ]
   }
 ];
