@@ -24,6 +24,15 @@ import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
 // Sparks Preschool Gallery Images
 import sparkActivityImg from '../assets/images/experience/spark/WhatsApp Image 2026-08-26 at 21.14.43 (2).jpeg';
 
+// SMK Prestasi Prima Gallery Images
+import smkImg1 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.40 (1).jpeg';
+import smkImg2 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.40.jpeg';
+import smkImg3 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.41 (1).jpeg';
+import smkImg4 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.41.jpeg';
+import smkImg5 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.42.jpeg';
+import smkImg6 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43 (1).jpeg';
+import smkImg7 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43.jpeg';
+
 const experiencesData = [
   {
     id: 1,
@@ -78,24 +87,29 @@ const experiencesData = [
   },
   {
     id: 3,
-    role: 'Teacher',
+    role: 'Vocational Teacher – Broadcasting & Film',
     employmentType: 'Educator',
-    period: '2026',
-    location: 'Indonesia',
-    year: '2026',
+    period: 'January 2025 – January 2026',
+    location: 'Jakarta, Indonesia',
+    year: '2025 – 2026',
     icon: <User size={14} />,
     companyLogo: logo3,
     image: exp3,
-    companyName: 'SMK Prestasi Prima',
-    description: 'Sebagai guru saya mengajar dan membimbing siswa dalam bidang penyiaran dan media kreatif.',
-    details: 'Membimbing dan melatih siswa dalam kompetensi broadcasting, produksi audio-visual, dan etika komunikasi media.',
+    companyName: 'SMK PRESTASI PRIMA',
+    description: 'Taught Broadcasting and Film Production subjects to Grade 10–12 students and mentored filmmaking projects.',
+    details: 'Served as a Vocational Teacher guiding students in broadcasting and television film production, multicamera studio operations, and creative filmmaking projects.',
     responsibilities: [
-      'Taught broadcasting theory and hands-on audiovisual production skills.',
-      'Guided students in multicamera studio setups and live broadcasting simulations.',
-      'Cultivated ethical journalism standards and creative media storytelling.'
+      'Taught Broadcasting and Film Production subjects to Grade 10–12 students',
+      'Mentored students in digital content creation and filmmaking projects'
     ],
     gallery: [
-      { src: exp3, alt: 'SMK Prestasi Prima Experience' }
+      { src: smkImg1, alt: 'SMK Prestasi Prima Film & Broadcasting Mentoring 1' },
+      { src: smkImg2, alt: 'SMK Prestasi Prima Studio Production' },
+      { src: smkImg3, alt: 'SMK Prestasi Prima Practical Class' },
+      { src: smkImg4, alt: 'SMK Prestasi Prima Student Content Creation' },
+      { src: smkImg5, alt: 'SMK Prestasi Prima Camera & Equipment Practice' },
+      { src: smkImg6, alt: 'SMK Prestasi Prima Classroom Session' },
+      { src: smkImg7, alt: 'SMK Prestasi Prima Broadcasting Activity' }
     ]
   }
 ];
