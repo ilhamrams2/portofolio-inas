@@ -1,0 +1,618 @@
+.experiences-section {
+  background-color: #1a1a1a;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.experiences-bg-pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background-image: url("data:image/svg+xml,%3Csvg width='50' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='40' height='30' rx='5' ry='5' x='5' y='5' fill='none' stroke='%23ff0000' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 50px 40px;
+  opacity: 0.15;
+  mask-image: radial-gradient(ellipse at bottom left, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at bottom left, black 20%, transparent 70%);
+  z-index: 1;
+}
+
+.backshape {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.backshape-1 {
+  bottom: 0;
+  right: -200px;
+}
+
+.backshape-2 {
+  top: 0;
+  left: -500px;
+}
+
+.experiences-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  gap: 3rem;
+  padding: 0 4rem;
+}
+
+.experiences-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  margin-bottom: 2rem;
+}
+
+.label-text {
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.experiences-title {
+  font-family: 'Anton', sans-serif;
+  color: #ff0000;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+.experiences-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  color: #dddddd;
+  font-size: 0.8rem;
+  max-width: 700px;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.experience-card {
+  background-color: #222222;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #333333;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  border-color: #660000;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #333333; /* Placeholder background */
+}
+
+.experience-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.experience-card:hover .experience-image {
+  transform: scale(1.05);
+}
+
+.card-tags {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.card-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #000000;
+  color: white;
+  border: 1px solid #cc0000;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+}
+
+.tag-icon-small {
+  display: flex;
+  align-items: center;
+  color: #cccccc;
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.company-logo {
+  font-family: 'Anton', sans-serif;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-desc {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #cccccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.small-btn {
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  align-self: flex-start;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+}
+
+.bento-modal {
+  background-color: #161616;
+  border: 1px solid rgba(255, 0, 0, 0.5);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 920px;
+  padding: 2.5rem 2.5rem;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 0, 0, 0.15);
+  animation: modalFadeIn 0.3s ease-out forwards;
+  max-height: 88vh;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Bento Modal */
+.bento-modal::-webkit-scrollbar {
+  width: 6px;
+}
+.bento-modal::-webkit-scrollbar-track {
+  background: #141414;
+  border-radius: 4px;
+}
+.bento-modal::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+.bento-modal::-webkit-scrollbar-thumb:hover {
+  background: #ff0000;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cccccc;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.modal-header-centered {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-company-logo {
+  height: 55px;
+  object-fit: contain;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+}
+
+.modal-meta-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.modal-role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: #b31010;
+  border: 1px solid #ff0000;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.35);
+}
+
+.badge-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+}
+
+.modal-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.modal-meta-pill svg {
+  color: #ff3333;
+}
+
+.modal-company-title {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.6rem 0;
+  letter-spacing: 0.5px;
+}
+
+.modal-desc-centered {
+  font-family: 'Space Grotesk', sans-serif;
+  color: #bbbbbb;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Responsibilities Box */
+.modal-responsibilities-box {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #ff0000;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.responsibilities-heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ff4444;
+  margin: 0 0 0.85rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.responsibilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.responsibilities-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.88rem;
+  color: #cccccc;
+  line-height: 1.5;
+}
+
+.resp-icon {
+  color: #ff3333;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Bento Gallery Layout */
+.modal-gallery-bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 12px;
+  margin-top: 1.75rem;
+  width: 100%;
+}
+
+.bento-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0d0d0d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 0, 0, 0.5);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.bento-item:hover img {
+  transform: scale(1.04);
+}
+
+.bento-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease;
+  backdrop-filter: blur(2px);
+}
+
+.bento-item:hover .bento-hover-overlay {
+  opacity: 1;
+}
+
+/* Garuda TV 7-Item Bento Grid Configuration */
+.bento-7-0 {
+  grid-column: span 7;
+  height: 240px;
+}
+
+.bento-7-1 {
+  grid-column: span 5;
+  height: 240px;
+}
+
+.bento-7-2 {
+  grid-column: span 4;
+  height: 190px;
+}
+
+.bento-7-3 {
+  grid-column: span 4;
+  height: 190px;
+}
+
+.bento-7-4 {
+  grid-column: span 4;
+  height: 190px;
+}
+
+.bento-7-5 {
+  grid-column: span 6;
+  height: 260px;
+}
+
+.bento-7-6 {
+  grid-column: span 6;
+  height: 260px;
+}
+
+/* Sparks Preschool 2-Item Bento Configuration */
+.bento-2-0 {
+  grid-column: span 6;
+  height: 290px;
+}
+
+.bento-2-1 {
+  grid-column: span 6;
+  height: 290px;
+}
+
+/* 3-Item Bento Configuration */
+.bento-3-0 {
+  grid-column: span 6;
+  height: 280px;
+}
+
+.bento-3-1 {
+  grid-column: span 6;
+  height: 280px;
+}
+
+.bento-3-2 {
+  grid-column: span 12;
+  height: 270px;
+}
+
+/* Single Item Fallback */
+.bento-single {
+  grid-column: span 12;
+  height: 380px;
+}
+
+.bento-single img {
+  object-fit: contain;
+  background: #0a0a0a;
+}
+
+/* Preview Lightbox */
+.preview-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+.preview-lightbox-content {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-lightbox-img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.preview-lightbox-close {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preview-lightbox-close:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+@media (max-width: 1024px) {
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-7-0 { grid-column: span 12; height: 230px; }
+  .bento-7-1 { grid-column: span 12; height: 230px; }
+  .bento-7-2 { grid-column: span 6; height: 180px; }
+  .bento-7-3 { grid-column: span 6; height: 180px; }
+  .bento-7-4 { grid-column: span 12; height: 200px; }
+  .bento-7-5 { grid-column: span 6; height: 220px; }
+  .bento-7-6 { grid-column: span 6; height: 220px; }
+
+  .bento-2-0, .bento-2-1,
+  .bento-3-0, .bento-3-1, .bento-3-2 {
+    grid-column: span 12;
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+  .experiences-container {
+    padding: 0 1.5rem;
+  }
+  .experiences-title {
+    font-size: 2.2rem;
+  }
+  .bento-modal {
+    padding: 2rem 1.25rem;
+    max-height: 80vh;
+    margin-top: 40px;
+  }
+  
+  .bento-7-0, .bento-7-1, .bento-7-2, .bento-7-3, .bento-7-4, .bento-7-5, .bento-7-6,
+  .bento-2-0, .bento-2-1,
+  .bento-3-0, .bento-3-1, .bento-3-2 {
+    grid-column: span 12;
+    height: 200px;
+  }
+}
+
+
+
