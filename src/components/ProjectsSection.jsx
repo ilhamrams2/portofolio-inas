@@ -3,63 +3,80 @@ import backshape1 from '../assets/images/experience/backshape1.png';
 import logoGarudaTV from '../assets/images/experience/logo/logo-garudatv.png';
 import logoUniv from '../assets/images/projects/univ.png';
 import logoJobhun from '../assets/images/projects/jobhun.png';
+
+// Garuda TV Live Report Images
+import garudaImg20 from '../assets/images/experience/garudatv/image 20.png';
+import garudaImg21 from '../assets/images/experience/garudatv/image 21.png';
+import garudaImg23 from '../assets/images/experience/garudatv/image 23.png';
+
 import './ProjectsSection.css';
 
 const projectsData = [
   {
     id: 1,
-    title: 'PORTOFOLIO JOURNALIST NEWS GARUDA TV',
-    shortDesc: 'This project is a recap experiences at Garuda TV as a journalist tv role',
+    title: 'JOURNALIST NEWS PORTFOLIO - GARUDA TV',
+    shortDesc: 'A showcase of live reporting, broadcast journalism, and news coverage at Garuda TV.',
     logoImg: logoGarudaTV,
-    fullDetail: `Detail Lengkap: Portofolio Journalist News Garuda TV. 
-
-Sebagai seorang jurnalis televisi, saya bertanggung jawab penuh atas peliputan berita harian, penyusunan naskah (scriptwriting), dan laporan pandangan mata (live reporting). Proyek ini merangkum berbagai liputan nasional yang pernah saya kerjakan, mulai dari isu politik, sosial, hingga berita hiburan. 
-
-Tanggung Jawab Utama:
-- Melakukan riset mendalam sebelum peliputan.
-- Mewawancarai narasumber kunci di lapangan.
-- Menyusun naskah berita yang tajam, akurat, dan sesuai dengan etika jurnalistik.
-- Berkoordinasi dengan kameramen dan produser untuk menyajikan visual berita yang menarik.
-- Mengisi suara (voice-over) untuk paket berita harian.
-
-(Anda dapat mengganti teks ini dengan penjelasan detail yang jauh lebih panjang. Area ini sudah diatur agar bisa di-scroll ke bawah apabila kontennya sangat banyak sehingga tidak akan merusak layout utama halaman portofolio Anda.)`
+    overview: 'As a television journalist, I was responsible for breaking news coverage, investigative reporting, scriptwriting, and live on-location broadcasts across major national political and social events.',
+    reports: [
+      {
+        id: 'rep-1',
+        image: garudaImg20,
+        title: 'Live Report - First Pretrial Hearing of Roy Suryo (South Jakarta District Court)',
+        description: 'Delivering real-time information to the public regarding the latest updates and proceedings of the alleged fake diploma case, which entered the first pretrial hearing phase for defendant Roy Suryo at the South Jakarta District Court.'
+      },
+      {
+        id: 'rep-2',
+        image: garudaImg21,
+        title: 'Live Report - Indonesian House of Representatives (DPR RI)',
+        description: 'Delivering real-time information to the public regarding the latest updates from the Working Meeting and Hearing (Raker & RDP) of Commission IV DPR RI together with the Ministry of Agriculture.'
+      },
+      {
+        id: 'rep-3',
+        image: garudaImg23,
+        title: 'Live Report - Jakarta City Hall (Balaikota DKI Jakarta)',
+        description: 'Delivering live field updates on municipal governance, metropolitan developments, and press briefings directly from Jakarta City Hall for the Laporan 8 Siang broadcast.'
+      }
+    ],
+    keyResponsibilities: [
+      'Conducting comprehensive investigative research prior to field reporting.',
+      'Interviewing key public figures, government officials, and legal experts on-site.',
+      'Writing sharp, fact-checked, and ethics-compliant television news scripts.',
+      'Coordinating with camera crews and broadcast producers for compelling news visuals.',
+      'Performing live on-air reporting and studio voice-overs for daily national bulletins.'
+    ]
   },
   {
     id: 2,
-    title: 'PROJECT COLLAGE',
-    shortDesc: 'A project for the Creative Digital Media course, where I served as the content ideator, director, and video editor.',
+    title: 'PROJECT COLLAGE - CREATIVE DIGITAL MEDIA',
+    shortDesc: 'A creative digital media production serving as content ideator, director, and video editor.',
     logoImg: logoUniv,
-    fullDetail: `Detail Lengkap: Project Collage.
-
-Proyek ini merupakan tugas besar untuk mata kuliah Creative Digital Media. Saya berperan sebagai Content Ideator, Director, dan Video Editor.
-
-Tanggung Jawab Utama:
-- Mengembangkan konsep kreatif dari awal hingga akhir.
-- Memimpin proses syuting dan mengarahkan talent.
-- Melakukan proses editing video mulai dari offline hingga online editing (termasuk color grading dan sound mixing).
-
-(Tambahkan informasi lebih banyak di sini...)`
+    overview: 'A capstone creative media project for the Creative Digital Media course, focusing on cinematic visual storytelling, directing, and end-to-end digital production.',
+    keyResponsibilities: [
+      'Developed creative narratives, visual moodboards, and shooting storyboards from scratch.',
+      'Directed on-set actors and crew, managing camera angles, lighting, and pacing.',
+      'Conducted offline and online video editing, color grading, sound design, and final rendering.'
+    ],
+    summaryText: 'This project highlights cross-disciplinary creative production skills, combining narrative conceptualization with technical video editing proficiency.'
   },
   {
     id: 3,
-    title: 'CAPSTONE PROJECT COPYWRITING GROUP 4',
-    shortDesc: 'MSIB Batch 6 - Jobhun Academy',
+    title: 'CAPSTONE PROJECT COPYWRITING - GROUP 4',
+    shortDesc: 'Certified Independent Study (MSIB Batch 6) at Jobhun Academy focusing on conversion copywriting.',
     logoImg: logoJobhun,
-    fullDetail: `Detail Lengkap: Capstone Project Copywriting Group 4.
-
-Proyek akhir untuk program MSIB Batch 6 di Jobhun Academy. Fokus utama proyek ini adalah merancang strategi copywriting yang komprehensif untuk sebuah brand.
-
-Tanggung Jawab Utama:
-- Meriset target audiens dan pain points mereka.
-- Menyusun copy untuk landing page, social media ads, dan email marketing.
-- Melakukan A/B testing untuk melihat performa copy yang paling efektif.
-
-(Tambahkan informasi lebih banyak di sini...)`
+    overview: 'Final capstone copywriting campaign for MSIB Batch 6 at Jobhun Academy. Focused on comprehensive brand messaging, conversion-oriented copy, and multi-channel digital campaigns.',
+    keyResponsibilities: [
+      'Conducted target audience research, pain-point analysis, and competitor benchmarking.',
+      'Drafted conversion-focused copy for landing pages, social media advertising, and automated email funnels.',
+      'Executed A/B copy testing to measure audience engagement, CTR, and conversion metrics.'
+    ],
+    summaryText: 'Demonstrated mastery in persuasive writing, customer journey mapping, and strategic campaign execution across multiple digital marketing channels.'
   }
 ];
 
 function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(projectsData[0]);
+  const [previewImage, setPreviewImage] = useState(null);
 
   return (
     <section id="projects" className="projects-section">
@@ -86,18 +103,28 @@ function ProjectsSection() {
                 key={project.id} 
                 className={`project-card ${selectedProject.id === project.id ? 'active' : ''}`}
                 onClick={() => setSelectedProject(project)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedProject(project); }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Select project: ${project.title}`}
               >
-                <div className="project-logo-ph" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="project-logo-ph">
                   {project.logoImg ? (
-                    <img src={project.logoImg} alt="Logo" style={{ maxWidth: '80%', maxHeight: '80%', objectFit: 'contain' }} />
+                    <img 
+                      src={project.logoImg} 
+                      alt={`${project.title} Logo`} 
+                      className="project-card-logo-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   ) : (
-                    project.logoText
+                    project.title.charAt(0)
                   )}
                 </div>
                 <div className="project-card-content">
                   <h3 className="project-card-title">{project.title}</h3>
                   <p className="project-card-desc">{project.shortDesc}</p>
-                  <span className="see-detail">See Detail</span>
+                  <span className="see-detail">See Detail →</span>
                 </div>
               </div>
             ))}
@@ -106,20 +133,94 @@ function ProjectsSection() {
           {/* Right Side: Detail View (Scrollable) */}
           <div className="project-detail-view" data-aos="fade-left" data-aos-delay="400">
             <div className="detail-content-scroll">
-              <h2 className="detail-title">{selectedProject.title}</h2>
-              <div className="detail-body">
-                {selectedProject.fullDetail.split('\n').map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-              </div>
+              <h3 className="detail-title">{selectedProject.title}</h3>
+              
+              {/* Project Overview */}
+              {selectedProject.overview && (
+                <div className="project-overview-block">
+                  <p className="project-overview-text">{selectedProject.overview}</p>
+                </div>
+              )}
+
+              {/* Specific Live Reports Layout (Garuda TV style) */}
+              {selectedProject.reports && selectedProject.reports.length > 0 && (
+                <div className="project-reports-container">
+                  <h4 className="reports-section-title">Featured Broadcasts & Live Reports</h4>
+                  <div className="reports-list">
+                    {selectedProject.reports.map((report) => (
+                      <div key={report.id} className="report-item-card">
+                        <div 
+                          className="report-img-wrapper"
+                          onClick={() => setPreviewImage(report.image)}
+                          title="Click to view full image"
+                        >
+                          <img 
+                            src={report.image} 
+                            alt={report.title} 
+                            className="report-image"
+                            loading="lazy"
+                          />
+                          <div className="report-img-overlay">
+                            <span>🔍 Enlarge</span>
+                          </div>
+                        </div>
+                        <div className="report-info">
+                          <h4 className="report-title">{report.title}</h4>
+                          <p className="report-desc">{report.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Key Responsibilities */}
+              {selectedProject.keyResponsibilities && (
+                <div className="project-responsibilities-block">
+                  <h4 className="responsibilities-title">Key Responsibilities & Deliverables</h4>
+                  <ul className="responsibilities-list">
+                    {selectedProject.keyResponsibilities.map((item, idx) => (
+                      <li key={idx} className="responsibility-item">
+                        <span className="resp-bullet">▹</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Summary Text for other projects */}
+              {selectedProject.summaryText && (
+                <div className="project-summary-block">
+                  <p>{selectedProject.summaryText}</p>
+                </div>
+              )}
+
             </div>
           </div>
 
         </div>
 
       </div>
+
+      {/* Image Preview Modal */}
+      {previewImage && (
+        <div className="proj-image-modal-overlay" onClick={() => setPreviewImage(null)}>
+          <div className="proj-image-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button 
+              className="proj-modal-close-btn" 
+              onClick={() => setPreviewImage(null)}
+              aria-label="Close modal"
+            >
+              ✕
+            </button>
+            <img src={previewImage} alt="Live Report Full Preview" className="proj-modal-image" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
 export default ProjectsSection;
+

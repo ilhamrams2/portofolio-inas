@@ -94,11 +94,6 @@
   gap: 2rem;
 }
 
-/* 4th Card (TVRI) centered on Row 2 for desktop */
-.experience-card:nth-child(4) {
-  grid-column: 2;
-}
-
 .experience-card {
   background-color: #222222;
   border-radius: 10px;
@@ -602,9 +597,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  .experience-card:nth-child(4) {
-    grid-column: auto;
-  }
   .bento-7-0 { grid-column: span 12; height: 230px; }
   .bento-7-1 { grid-column: span 12; height: 230px; }
   .bento-7-2 { grid-column: span 6; height: 180px; }
@@ -625,9 +617,6 @@
   .experiences-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-  }
-  .experience-card:nth-child(4) {
-    grid-column: auto;
   }
   .experiences-container {
     padding: 0 1.5rem;

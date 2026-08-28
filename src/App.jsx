@@ -76,12 +76,17 @@ function App() {
     <>
       <div className="landing-container" id="home">
         <div className="container">
-          <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${navbarHidden ? 'navbar-hidden' : ''}`}>
+          <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${navbarHidden ? 'navbar-hidden' : ''}`} aria-label="Main Navigation">
             <div className="nav-container">
-              <div className="logo">INAS ZHAFIRAH</div>
+              <a href="#home" className="logo" style={{ textDecoration: 'none' }}>INAS ZHAFIRAH</a>
               
               {/* Hamburger Button */}
-              <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+              <button 
+                className="mobile-menu-btn" 
+                onClick={toggleMobileMenu}
+                aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                aria-expanded={isMobileMenuOpen}
+              >
                 {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
               </button>
 
@@ -92,12 +97,13 @@ function App() {
                 <a href="#projects" onClick={handleNavClick}>PROJECTS</a>
                 <a href="#certification" onClick={handleNavClick}>CERTIFICATION</a>
                 <a href="#contact" onClick={handleNavClick}>CONTACT</a>
-                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn" onClick={handleNavClick}>DOWNLOAD CV</a>
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn" onClick={handleNavClick} aria-label="Download Curriculum Vitae PDF">DOWNLOAD CV</a>
               </div>
             </div>
           </nav>
 
           <main className="main-content">
+            <h1 className="sr-only">Inas Zhafirah — Broadcast Journalist, Media Specialist &amp; Educator Portfolio</h1>
             <div className="text-section" data-aos="fade-right">
               <div className="intro">
                 <span className="red-dash"></span>
@@ -111,12 +117,21 @@ function App() {
                 storytelling, creativity, and meaningful communication.
               </p>
 
-              <button className="cta-btn" onClick={() => window.location.href = '#about'}>
+              <button className="cta-btn" onClick={() => window.location.href = '#about'} aria-label="Know more about Inas Zhafirah">
                 KNOW ME MORE <ArrowRight size={20} />
               </button>
             </div>
 
-            <img src={personImg} alt="Inas Zhafirah" className="person-image" data-aos="fade-left" data-aos-delay="200" />
+            <img 
+              src={personImg} 
+              alt="Inas Zhafirah - Broadcast Journalist and Media Specialist" 
+              className="person-image" 
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              data-aos="fade-left" 
+              data-aos-delay="200" 
+            />
           </main>
         </div>
       </div>
@@ -130,7 +145,7 @@ function App() {
       <Footer />
 
       {showTopBtn && (
-        <button className="back-to-top" onClick={goToTop}>
+        <button className="back-to-top" onClick={goToTop} aria-label="Scroll back to top of page">
           <ArrowUp size={24} />
         </button>
       )}

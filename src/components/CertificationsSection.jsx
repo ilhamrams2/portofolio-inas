@@ -206,9 +206,23 @@ function CertificationsSection() {
               style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
             >
               {certificationsData.map((cert) => (
-                <div className="cert-card" key={cert.id} onClick={() => setSelectedCert(cert)}>
+                <div 
+                  className="cert-card" 
+                  key={cert.id} 
+                  onClick={() => setSelectedCert(cert)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setSelectedCert(cert); }}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View certificate: ${cert.title}`}
+                >
                   <div className="cert-image-container">
-                    <img src={cert.img} alt={cert.title} className="cert-img" loading="lazy" />
+                    <img 
+                      src={cert.img} 
+                      alt={`${cert.title} - ${cert.issuer}`} 
+                      className="cert-img" 
+                      loading="lazy" 
+                      decoding="async"
+                    />
                     <div className="cert-overlay">
                       <span className="cert-view-btn">
                         <Maximize2 size={16} /> View Certificate
@@ -239,6 +253,10 @@ function CertificationsSection() {
                 key={idx} 
                 className={`dot ${currentIndex === idx ? 'active' : ''}`}
                 onClick={() => goToSlide(idx)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') goToSlide(idx); }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Go to slide ${idx + 1}`}
               ></span>
             ))}
           </div>
@@ -248,20 +266,21 @@ function CertificationsSection() {
 
       {/* Certificate Lightbox Modal */}
       {selectedCert && (
-        <div className="cert-modal-overlay" onClick={() => setSelectedCert(null)}>
+        <div className="cert-modal-overlay" onClick={() => setSelectedCert(null)} role="dialog" aria-modal="true" aria-label="Certificate details modal">
           <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
             <button 
               className="cert-modal-close" 
               onClick={() => setSelectedCert(null)}
-              aria-label="Close modal"
+              aria-label="Close certificate modal"
             >
               <X size={24} color="#ffffff" />
             </button>
             <div className="cert-modal-image-wrapper">
               <img 
                 src={selectedCert.img} 
-                alt={selectedCert.title} 
+                alt={`${selectedCert.title} - ${selectedCert.issuer}`} 
                 className="cert-modal-image" 
+                decoding="async"
               />
             </div>
             <div className="cert-modal-footer">

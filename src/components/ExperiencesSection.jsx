@@ -25,6 +25,7 @@ import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
 import sparkActivityImg from '../assets/images/experience/spark/WhatsApp Image 2026-08-26 at 21.14.43 (2).jpeg';
 
 // TVRI Gallery Images
+import tvriCardCover from '../assets/images/experience/inas-zhafirah-tvri.jpeg';
 import tvriCoverImg from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.32.jpeg';
 import tvriImg2 from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.31 (1).jpeg';
 import tvriImg3 from '../assets/images/experience/tvri/WhatsApp Image 2026-08-26 at 21.39.30.jpeg';
@@ -39,6 +40,17 @@ import smkImg4 from '../assets/images/experience/smkprestasiprima/WhatsApp Image
 import smkImg5 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.42.jpeg';
 import smkImg6 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43 (1).jpeg';
 import smkImg7 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43.jpeg';
+
+// Andalusia Experience & Gallery Images
+import expAndalusia from '../assets/images/experience/inas-zhafirah-andalusia.jpeg';
+import logoAndalusia from '../assets/images/experience/logo/MI PLUS ANDALUSIA QUR\'ANIC SCHOOL.png';
+import andalusiaImg1 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.46.30.jpeg';
+import andalusiaImg2 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.42 (2).jpeg';
+import andalusiaImg3 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.48.jpeg';
+import andalusiaImg4 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.46.jpeg';
+import andalusiaImg5 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.49.jpeg';
+import andalusiaImg6 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.47 (1).jpeg';
+import andalusiaImg7 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.54.jpeg';
 
 const experiencesData = [
   {
@@ -128,7 +140,7 @@ const experiencesData = [
     year: '2024',
     icon: <Mic size={14} />,
     companyLogo: logoTvri,
-    image: tvriCoverImg,
+    image: tvriCardCover,
     companyName: 'TVRI NASIONAL',
     description: 'Monitored daily news developments and produced online news articles from field reporting and ministerial press conferences.',
     details: 'Served as an Online News Portal Reporter at TVRI Nasional covering major press conferences, ministerial briefings, and breaking national developments.',
@@ -141,6 +153,34 @@ const experiencesData = [
       { src: tvriImg2, alt: 'TVRI Press Conference Munas 2024' },
       { src: tvriImg3, alt: 'TVRI Reporting at Kemenko PMK' },
       { src: tvriImg4, alt: 'TVRI Coverage at Kominfo Press Room' }
+    ]
+  },
+  {
+    id: 5,
+    role: 'Homeroom Teacher',
+    employmentType: 'Educator & MC',
+    period: 'July 2021 – June 2024',
+    location: 'Jakarta, Indonesia',
+    year: '2021 – 2024',
+    icon: <BookOpen size={14} />,
+    companyLogo: logoAndalusia,
+    image: expAndalusia,
+    companyName: 'MI PLUS ANDALUSIA QUR’ANIC SCHOOL',
+    description: 'Served as Grade 5 Homeroom Teacher for three academic years, taught general & Islamic education, and hosted school ceremonies as Master of Ceremony.',
+    details: 'Served as Grade 5 Homeroom Teacher for three academic years at MI Plus Andalusia Qur’anic School, managing classroom instruction in general and Islamic subjects and hosting formal school ceremonies as Master of Ceremony.',
+    responsibilities: [
+      'Served as Grade 5 Homeroom Teacher for three academic years',
+      'Taught general and Islamic education subjects',
+      'Hosted school ceremonies and graduation events as Master of Ceremony'
+    ],
+    gallery: [
+      { src: andalusiaImg1, alt: 'MI Plus Andalusia Master of Ceremony Stage' },
+      { src: andalusiaImg2, alt: 'MI Plus Andalusia Pesantren Kilat Event' },
+      { src: andalusiaImg3, alt: 'MI Plus Andalusia Classroom Audiovisual Learning' },
+      { src: andalusiaImg4, alt: 'MI Plus Andalusia Teacher & Student Appreciation' },
+      { src: andalusiaImg5, alt: 'MI Plus Andalusia Outdoor Activity & Trophy Celebration' },
+      { src: andalusiaImg6, alt: 'MI Plus Andalusia School Community Activity' },
+      { src: andalusiaImg7, alt: 'MI Plus Andalusia Classroom Session' }
     ]
   }
 ];
@@ -207,7 +247,13 @@ function ExperiencesSection() {
           {experiencesData.map((exp, idx) => (
             <div className="experience-card" key={exp.id} data-aos="fade-up" data-aos-delay={`${idx * 100}`}>
               <div className="card-image-wrapper">
-                <img src={exp.image} alt={exp.companyName} className="experience-image" />
+                <img 
+                  src={exp.image} 
+                  alt={`${exp.companyName} - ${exp.role} by Inas Zhafirah`} 
+                  className="experience-image" 
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="card-tags">
                   <span className="card-tag">
                     <span className="tag-icon-small">{exp.icon}</span>
@@ -218,10 +264,20 @@ function ExperiencesSection() {
               </div>
               <div className="card-content">
                 <div className="company-logo">
-                  <img src={exp.companyLogo} alt={`${exp.companyName} Logo`} style={{ height: '30px', objectFit: 'contain' }} />
+                  <img 
+                    src={exp.companyLogo} 
+                    alt={`${exp.companyName} Logo`} 
+                    style={{ height: '30px', objectFit: 'contain' }} 
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
                 <p className="card-desc">{exp.description}</p>
-                <button className="cta-btn small-btn" onClick={() => openModal(exp)}>
+                <button 
+                  className="cta-btn small-btn" 
+                  onClick={() => openModal(exp)}
+                  aria-label={`View experience details at ${exp.companyName}`}
+                >
                   Click For Details
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -237,14 +293,20 @@ function ExperiencesSection() {
 
       {/* Modal */}
       {selectedExp && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay" onClick={closeModal} role="dialog" aria-modal="true" aria-labelledby="modal-company-title">
           <div className="modal-content bento-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal} aria-label="Close modal">
+            <button className="modal-close" onClick={closeModal} aria-label="Close details modal">
               <X size={24} />
             </button>
             
             <div className="modal-header-centered">
-              <img src={selectedExp.companyLogo} alt={`${selectedExp.companyName} Logo`} className="modal-company-logo" />
+              <img 
+                src={selectedExp.companyLogo} 
+                alt={`${selectedExp.companyName} Logo`} 
+                className="modal-company-logo" 
+                loading="lazy"
+                decoding="async"
+              />
               
               <div className="modal-meta-badges">
                 <span className="modal-role-badge">
@@ -271,7 +333,7 @@ function ExperiencesSection() {
                 )}
               </div>
 
-              <h3 className="modal-company-title">{selectedExp.companyName}</h3>
+              <h3 id="modal-company-title" className="modal-company-title">{selectedExp.companyName}</h3>
               <p className="modal-desc-centered">{selectedExp.details || selectedExp.description}</p>
               
               {/* Key Responsibilities & Achievements */}
@@ -298,8 +360,17 @@ function ExperiencesSection() {
                     key={i} 
                     className={`bento-item bento-${selectedExp.gallery.length}-${i}`}
                     onClick={() => setPreviewImage(item.src)}
+                    tabIndex={0}
+                    role="button"
+                    aria-label={`View photo ${i + 1}: ${item.alt || selectedExp.companyName}`}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPreviewImage(item.src); }}
                   >
-                    <img src={item.src} alt={item.alt || `Gallery image ${i + 1}`} loading="lazy" />
+                    <img 
+                      src={item.src} 
+                      alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`} 
+                      loading="lazy" 
+                      decoding="async"
+                    />
                     <div className="bento-hover-overlay">
                       <Maximize2 size={18} color="#fff" />
                     </div>
@@ -309,10 +380,15 @@ function ExperiencesSection() {
                 <div 
                   className="bento-item bento-single"
                   onClick={() => setPreviewImage(selectedExp.gallery ? selectedExp.gallery[0]?.src : selectedExp.image)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`View photo: ${selectedExp.companyName}`}
                 >
                   <img 
                     src={selectedExp.gallery ? selectedExp.gallery[0]?.src : selectedExp.image} 
                     alt={selectedExp.companyName} 
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="bento-hover-overlay">
                     <Maximize2 size={18} color="#fff" />
@@ -326,16 +402,21 @@ function ExperiencesSection() {
 
       {/* Fullscreen Image Preview Lightbox */}
       {previewImage && (
-        <div className="preview-lightbox-overlay" onClick={() => setPreviewImage(null)}>
+        <div className="preview-lightbox-overlay" onClick={() => setPreviewImage(null)} role="dialog" aria-modal="true" aria-label="Fullscreen image lightbox">
           <div className="preview-lightbox-content" onClick={(e) => e.stopPropagation()}>
             <button 
               className="preview-lightbox-close" 
               onClick={() => setPreviewImage(null)}
-              aria-label="Close image preview"
+              aria-label="Close fullscreen preview"
             >
               <X size={24} color="#ffffff" />
             </button>
-            <img src={previewImage} alt="Fullscreen preview" className="preview-lightbox-img" />
+            <img 
+              src={previewImage} 
+              alt="Fullscreen experience documentation preview" 
+              className="preview-lightbox-img" 
+              decoding="async"
+            />
           </div>
         </div>
       )}
