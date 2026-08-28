@@ -133,7 +133,7 @@ const experiencesData = [
     year: '2025 – 2026',
     icon: <User size={14} />,
     companyLogo: logo3,
-    image: exp3,
+    image: smkCoverExtra,
     companyName: 'SMK PRESTASI PRIMA',
     description: 'Taught Broadcasting and Film Production subjects to Grade 10–12 students and mentored filmmaking projects.',
     details: 'Served as a Vocational Teacher guiding students in broadcasting and television film production, multicamera studio operations, and creative filmmaking projects.',
@@ -142,6 +142,7 @@ const experiencesData = [
       'Mentored students in digital content creation and filmmaking projects'
     ],
     gallery: [
+      { src: smkImg8, alt: 'SMK Prestasi Prima Studio Production Team Practice' },
       { src: exp3, alt: 'SMK Prestasi Prima Broadcasting & Film Instructor' },
       { src: smkCoverExtra, alt: 'SMK Prestasi Prima Mentoring & Campus Activity' },
       { src: smkImg1, alt: 'SMK Prestasi Prima Film & Broadcasting Mentoring 1' },
@@ -266,9 +267,9 @@ function ExperiencesSection() {
       <img src={backshape1} alt="" className="backshape backshape-1" />
       <img src={backshape2} alt="" className="backshape backshape-2" />
       <div className="experiences-bg-pattern"></div>
-      
+
       <div className="container experiences-container">
-        
+
         {/* Header Area */}
         <div className="experiences-header" data-aos="fade-up">
           <div className="section-label">
@@ -286,10 +287,10 @@ function ExperiencesSection() {
           {experiencesData.map((exp, idx) => (
             <div className="experience-card" key={exp.id} data-aos="fade-up" data-aos-delay={`${idx * 100}`}>
               <div className="card-image-wrapper">
-                <ImageWithSkeleton 
-                  src={exp.image} 
-                  alt={`${exp.companyName} - ${exp.role} by Inas Zhafirah`} 
-                  className="experience-image" 
+                <ImageWithSkeleton
+                  src={exp.image}
+                  alt={`${exp.companyName} - ${exp.role} by Inas Zhafirah`}
+                  className="experience-image"
                   wrapperClassName="experience-skeleton-wrap"
                   loading="lazy"
                   decoding="async"
@@ -304,25 +305,25 @@ function ExperiencesSection() {
               </div>
               <div className="card-content">
                 <div className="company-logo">
-                  <img 
-                    src={exp.companyLogo} 
-                    alt={`${exp.companyName} Logo`} 
-                    style={{ height: '30px', objectFit: 'contain' }} 
+                  <img
+                    src={exp.companyLogo}
+                    alt={`${exp.companyName} Logo`}
+                    style={{ height: '30px', objectFit: 'contain' }}
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
                 <h3 className="card-company-name">{exp.companyName}</h3>
                 <p className="card-desc">{exp.description}</p>
-                <button 
-                  className="cta-btn small-btn" 
+                <button
+                  className="cta-btn small-btn"
                   onClick={() => openModal(exp)}
                   aria-label={`View experience details at ${exp.companyName}`}
                 >
                   Click For Details
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M12 5L19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
               </div>
@@ -339,16 +340,16 @@ function ExperiencesSection() {
             <button className="modal-close" onClick={closeModal} aria-label="Close details modal">
               <X size={24} />
             </button>
-            
+
             {/* Modal Header Area */}
             <div className="modal-header-centered">
               <div className="modal-logo-container">
-                <img 
-                  src={selectedExp.companyLogo} 
-                  alt={`${selectedExp.companyName} Logo`} 
-                  className="modal-center-logo" 
-                  loading="lazy" 
-                  decoding="async" 
+                <img
+                  src={selectedExp.companyLogo}
+                  alt={`${selectedExp.companyName} Logo`}
+                  className="modal-center-logo"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -382,7 +383,7 @@ function ExperiencesSection() {
 
               <h3 id="modal-company-title" className="modal-company-title">{selectedExp.companyName}</h3>
               <p className="modal-desc-centered">{selectedExp.details || selectedExp.description}</p>
-              
+
               {/* Key Responsibilities & Achievements */}
               {selectedExp.responsibilities && selectedExp.responsibilities.length > 0 && (
                 <div className="modal-responsibilities-box">
@@ -402,8 +403,8 @@ function ExperiencesSection() {
             {/* Modal Gallery Grid */}
             <div className="modal-gallery-grid">
               {selectedExp.gallery && selectedExp.gallery.map((item, i) => (
-                <div 
-                  key={i} 
+                <div
+                  key={i}
                   className="modal-gallery-item"
                   onClick={() => setPreviewImage(item.src)}
                   tabIndex={0}
@@ -411,12 +412,12 @@ function ExperiencesSection() {
                   aria-label={`View photo ${i + 1}: ${item.alt || selectedExp.companyName}`}
                   onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPreviewImage(item.src); }}
                 >
-                  <ImageWithSkeleton 
-                    src={item.src} 
-                    alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`} 
+                  <ImageWithSkeleton
+                    src={item.src}
+                    alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`}
                     wrapperClassName="bento-skeleton-wrap"
-                    loading="lazy" 
-                    decoding="async" 
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="bento-hover-overlay">
                     <Maximize2 size={20} color="#fff" />
@@ -432,17 +433,17 @@ function ExperiencesSection() {
       {previewImage && (
         <div className="preview-lightbox-overlay" onClick={() => setPreviewImage(null)} role="dialog" aria-modal="true" aria-label="Fullscreen image lightbox">
           <div className="preview-lightbox-content" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="preview-lightbox-close" 
+            <button
+              className="preview-lightbox-close"
               onClick={() => setPreviewImage(null)}
               aria-label="Close fullscreen preview"
             >
               <X size={24} color="#ffffff" />
             </button>
-            <ImageWithSkeleton 
-              src={previewImage} 
-              alt="Fullscreen experience documentation preview" 
-              className="preview-lightbox-img" 
+            <ImageWithSkeleton
+              src={previewImage}
+              alt="Fullscreen experience documentation preview"
+              className="preview-lightbox-img"
               wrapperClassName="preview-lightbox-skeleton-wrap"
               decoding="async"
             />
