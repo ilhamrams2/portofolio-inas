@@ -7,7 +7,7 @@ import './ExperiencesSection.css';
 
 import exp1 from '../assets/images/experience/inas-zhafirah-garudatv.png';
 import exp2 from '../assets/images/experience/inas-zhafirah-sparkpreschool.jpeg';
-import exp3 from '../assets/images/experience/inas-zhafirah-prestasiprima.png';
+import exp3 from '../assets/images/experience/inas-zhafirah-prestasiprima2.png';
 
 import logo1 from '../assets/images/experience/logo/logo-garudatv.png';
 import logo2 from '../assets/images/experience/logo/logo-sparkpreschool.png';
@@ -21,6 +21,7 @@ import garudaImg23 from '../assets/images/experience/garudatv/image 23.png';
 import garudaImg24 from '../assets/images/experience/garudatv/image 24.png';
 import garudaImg25 from '../assets/images/experience/garudatv/image 25.png';
 import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
+import garudaAsramaHaji from '../assets/images/experience/garudatv/asrama-haji.png';
 
 // Sparks Preschool Gallery Images
 import sparkActivityImg from '../assets/images/experience/spark/WhatsApp Image 2026-08-26 at 21.14.43 (2).jpeg';
@@ -41,17 +42,33 @@ import smkImg4 from '../assets/images/experience/smkprestasiprima/WhatsApp Image
 import smkImg5 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.42.jpeg';
 import smkImg6 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43 (1).jpeg';
 import smkImg7 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.31.43.jpeg';
+import smkImg8 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.39.31.jpeg';
+import smkImg9 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.50.42 (2).jpeg';
+import smkImg10 from '../assets/images/experience/smkprestasiprima/WhatsApp Image 2026-08-26 at 21.50.58 (1).jpeg';
+import smkCoverExtra from '../assets/images/experience/inas-zhafirah-prestasiprima.jpeg';
 
 // Andalusia Experience & Gallery Images
-import expAndalusia from '../assets/images/experience/inas-zhafirah-andalusia.jpeg';
+import expAndalusia from '../assets/images/experience/inas-zhafirah-andalusia.png';
 import logoAndalusia from '../assets/images/experience/logo/MI PLUS ANDALUSIA QUR\'ANIC SCHOOL.png';
-import andalusiaImg1 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.46.30.jpeg';
+import andalusiaImg1 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.46.31.jpeg';
 import andalusiaImg2 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.42 (2).jpeg';
-import andalusiaImg3 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.48.jpeg';
-import andalusiaImg4 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.46.jpeg';
-import andalusiaImg5 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.49.jpeg';
-import andalusiaImg6 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.47 (1).jpeg';
-import andalusiaImg7 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.54.jpeg';
+import andalusiaImg3 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.42 (3).jpeg';
+import andalusiaImg4 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.43 (1).jpeg';
+import andalusiaImg5 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.43 (2).jpeg';
+import andalusiaImg6 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.44.jpeg';
+import andalusiaImg7 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.46 (1).jpeg';
+import andalusiaImg8 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.46 (2).jpeg';
+import andalusiaImg9 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.46.jpeg';
+import andalusiaImg10 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.47 (1).jpeg';
+import andalusiaImg11 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.47 (2).jpeg';
+import andalusiaImg12 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.48.jpeg';
+import andalusiaImg13 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.49.jpeg';
+import andalusiaImg14 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.53.jpeg';
+import andalusiaImg15 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.54 (1).jpeg';
+import andalusiaImg16 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-26 at 21.50.55 (1).jpeg';
+import andalusiaImg17 from '../assets/images/experience/andalusia/WhatsApp Image 2026-08-28 at 22.24.41.jpeg';
+import andalusiaImg18 from '../assets/images/experience/andalusia/andalusia.jpeg';
+import andalusiaExtraCover from '../assets/images/experience/inas-zhafirah-andalusia2.jpeg';
 
 const experiencesData = [
   {
@@ -73,13 +90,15 @@ const experiencesData = [
       'Performed voice-over narration for television news packages and feature stories'
     ],
     gallery: [
-      { src: garudaImg20, alt: 'Garuda TV Live Report 1' },
-      { src: garudaImg21, alt: 'Garuda TV Newsroom' },
-      { src: garudaImg22, alt: 'Garuda TV Field Interview' },
-      { src: garudaImg23, alt: 'Garuda TV Broadcasting' },
-      { src: garudaImg24, alt: 'Garuda TV Press Conference' },
-      { src: garudaImg25, alt: 'Garuda TV Production' },
-      { src: garudaImg26, alt: 'Garuda TV Behind the Scenes' }
+      { src: exp1, alt: 'Garuda TV Field Reporting at Gelora Bung Karno' },
+      { src: garudaImg20, alt: 'Garuda TV Live Report - Sidang Praperadilan Roy Suryo' },
+      { src: garudaImg21, alt: 'Garuda TV Live Report - DPR RI Komisi IV' },
+      { src: garudaImg22, alt: 'Garuda TV Live Report - Stasiun Gambir' },
+      { src: garudaImg23, alt: 'Garuda TV Live Report - Balaikota DKI Jakarta' },
+      { src: garudaImg24, alt: 'Garuda TV Live Report - Pengadilan Militer II Jakarta' },
+      { src: garudaImg25, alt: 'Garuda TV Report - Dewa United Arena Banten' },
+      { src: garudaImg26, alt: 'Garuda TV Report - Kementerian Keuangan (APBN KiTa)' },
+      { src: garudaAsramaHaji, alt: 'Garuda TV Live Report - Asrama Haji Embarkasi Jakarta' }
     ]
   },
   {
@@ -123,13 +142,18 @@ const experiencesData = [
       'Mentored students in digital content creation and filmmaking projects'
     ],
     gallery: [
+      { src: exp3, alt: 'SMK Prestasi Prima Broadcasting & Film Instructor' },
+      { src: smkCoverExtra, alt: 'SMK Prestasi Prima Mentoring & Campus Activity' },
       { src: smkImg1, alt: 'SMK Prestasi Prima Film & Broadcasting Mentoring 1' },
       { src: smkImg2, alt: 'SMK Prestasi Prima Studio Production' },
       { src: smkImg3, alt: 'SMK Prestasi Prima Practical Class' },
       { src: smkImg4, alt: 'SMK Prestasi Prima Student Content Creation' },
       { src: smkImg5, alt: 'SMK Prestasi Prima Camera & Equipment Practice' },
       { src: smkImg6, alt: 'SMK Prestasi Prima Classroom Session' },
-      { src: smkImg7, alt: 'SMK Prestasi Prima Broadcasting Activity' }
+      { src: smkImg7, alt: 'SMK Prestasi Prima Broadcasting Activity' },
+      { src: smkImg8, alt: 'SMK Prestasi Prima Production Practice' },
+      { src: smkImg9, alt: 'SMK Prestasi Prima Student Projects Mentoring' },
+      { src: smkImg10, alt: 'SMK Prestasi Prima Studio Coordination' }
     ]
   },
   {
@@ -150,6 +174,7 @@ const experiencesData = [
       'Produced online news articles from interviews and field reporting'
     ],
     gallery: [
+      { src: tvriCardCover, alt: 'TVRI Nasional Newsroom & Online Reporting' },
       { src: tvriCoverImg, alt: 'TVRI Field Coverage at KPK' },
       { src: tvriImg2, alt: 'TVRI Press Conference Munas 2024' },
       { src: tvriImg3, alt: 'TVRI Reporting at Kemenko PMK' },
@@ -175,13 +200,26 @@ const experiencesData = [
       'Hosted school ceremonies and graduation events as Master of Ceremony'
     ],
     gallery: [
+      { src: expAndalusia, alt: 'MI Plus Andalusia Qur’anic School Homeroom Teacher' },
+      { src: andalusiaExtraCover, alt: 'MI Plus Andalusia Educational Leadership' },
       { src: andalusiaImg1, alt: 'MI Plus Andalusia Master of Ceremony Stage' },
       { src: andalusiaImg2, alt: 'MI Plus Andalusia Pesantren Kilat Event' },
       { src: andalusiaImg3, alt: 'MI Plus Andalusia Classroom Audiovisual Learning' },
       { src: andalusiaImg4, alt: 'MI Plus Andalusia Teacher & Student Appreciation' },
       { src: andalusiaImg5, alt: 'MI Plus Andalusia Outdoor Activity & Trophy Celebration' },
       { src: andalusiaImg6, alt: 'MI Plus Andalusia School Community Activity' },
-      { src: andalusiaImg7, alt: 'MI Plus Andalusia Classroom Session' }
+      { src: andalusiaImg7, alt: 'MI Plus Andalusia Classroom Session 1' },
+      { src: andalusiaImg8, alt: 'MI Plus Andalusia Classroom Session 2' },
+      { src: andalusiaImg9, alt: 'MI Plus Andalusia Student Guidance' },
+      { src: andalusiaImg10, alt: 'MI Plus Andalusia Interactive Class Activity' },
+      { src: andalusiaImg11, alt: 'MI Plus Andalusia Islamic Studies' },
+      { src: andalusiaImg12, alt: 'MI Plus Andalusia Graduation & School Ceremony' },
+      { src: andalusiaImg13, alt: 'MI Plus Andalusia Student Awarding' },
+      { src: andalusiaImg14, alt: 'MI Plus Andalusia Campus Community Event' },
+      { src: andalusiaImg15, alt: 'MI Plus Andalusia School Assembly' },
+      { src: andalusiaImg16, alt: 'MI Plus Andalusia Character Building Program' },
+      { src: andalusiaImg17, alt: 'MI Plus Andalusia Mentorship Session' },
+      { src: andalusiaImg18, alt: 'MI Plus Andalusia School Activity' }
     ]
   }
 ];

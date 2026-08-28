@@ -16,6 +16,10 @@ import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
 import asramaHajiImg from '../assets/images/experience/garudatv/asrama-haji.png';
 import gbkImg from '../assets/images/experience/inas-zhafirah-garudatv.png';
 
+// BSI Project Images
+import bsiImg1 from '../assets/images/projects/WhatsApp Image 2026-08-28 at 22.25.50.jpeg';
+import bsiImg2 from '../assets/images/projects/WhatsApp Image 2026-08-28 at 22.27.58.jpeg';
+
 import './ProjectsSection.css';
 
 const projectsData = [
@@ -91,16 +95,29 @@ const projectsData = [
   },
   {
     id: 2,
-    title: 'PROJECT COLLAGE - CREATIVE DIGITAL MEDIA',
-    shortDesc: 'A creative digital media production serving as content ideator, director, and video editor.',
+    title: 'EXECUTIVE PRODUCER BSI AWARDS 2023 - UNIVERSITAS BINA SARANA INFORMATIKA',
+    shortDesc: 'Executive Producer for the annual BSI Awards 2023 ceremony at Bina Sarana Informatika University.',
     logoImg: logoUniv,
-    overview: 'A capstone creative media project for the Creative Digital Media course, focusing on cinematic visual storytelling, directing, and end-to-end digital production.',
-    keyResponsibilities: [
-      'Developed creative narratives, visual moodboards, and shooting storyboards from scratch.',
-      'Directed on-set actors and crew, managing camera angles, lighting, and pacing.',
-      'Conducted offline and online video editing, color grading, sound design, and final rendering.'
+    overview: 'Served as Executive Producer for BSI Awards 2023 at Bina Sarana Informatika University, directing the overarching event broadcasting, visual media direction, and multi-camera live production.',
+    reports: [
+      {
+        id: 'bsi-1',
+        image: bsiImg1,
+        title: 'Executive Producer BSI Awards 2023 - Bina Sarana Informatika University',
+        description: 'Executive Producer BSI Awards 2023 - Bina Sarana Informatika University'
+      },
+      {
+        id: 'bsi-2',
+        image: bsiImg2,
+        title: 'Executive Producer BSI Awards 2023 - Bina Sarana Informatika University',
+        description: 'Executive Producer BSI Awards 2023 - Bina Sarana Informatika University'
+      }
     ],
-    summaryText: 'This project highlights cross-disciplinary creative production skills, combining narrative conceptualization with technical video editing proficiency.'
+    keyResponsibilities: [
+      'Led the end-to-end creative production planning, rundown scheduling, and technical coordination for BSI Awards 2023.',
+      'Supervised live multicamera switching, on-air graphics, audio mixing, and broadcast stage lighting.',
+      'Coordinated across student production crews, talents, university executives, and technical departments.'
+    ]
   },
   {
     id: 3,
