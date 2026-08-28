@@ -95,7 +95,7 @@ const projectsData = [
   },
   {
     id: 2,
-    title: 'EXECUTIVE PRODUCER BSI AWARDS 2023 - UNIVERSITAS BINA SARANA INFORMATIKA',
+    title: 'BINA SARANA INFORMATIKA',
     shortDesc: 'Executive Producer for the annual BSI Awards 2023 ceremony at Bina Sarana Informatika University.',
     logoImg: logoUniv,
     overview: 'Served as Executive Producer for BSI Awards 2023 at Bina Sarana Informatika University, directing the overarching event broadcasting, visual media direction, and multi-camera live production.',

@@ -398,52 +398,31 @@ function ExperiencesSection() {
                 </div>
               )}
             </div>
-            
-            {/* Bento Gallery Grid */}
-            <div className="modal-gallery-bento">
-              {selectedExp.gallery && selectedExp.gallery.length > 1 ? (
-                selectedExp.gallery.map((item, i) => (
-                  <div 
-                    key={i} 
-                    className={`bento-item bento-${selectedExp.gallery.length}-${i}`}
-                    onClick={() => setPreviewImage(item.src)}
-                    tabIndex={0}
-                    role="button"
-                    aria-label={`View photo ${i + 1}: ${item.alt || selectedExp.companyName}`}
-                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPreviewImage(item.src); }}
-                  >
-                    <ImageWithSkeleton 
-                      src={item.src} 
-                      alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`} 
-                      wrapperClassName="bento-skeleton-wrap"
-                      loading="lazy" 
-                      decoding="async"
-                    />
-                    <div className="bento-hover-overlay">
-                      <Maximize2 size={18} color="#fff" />
-                    </div>
-                  </div>
-                ))
-              ) : (
+
+            {/* Modal Gallery Grid */}
+            <div className="modal-gallery-grid">
+              {selectedExp.gallery && selectedExp.gallery.map((item, i) => (
                 <div 
-                  className="bento-item bento-single"
-                  onClick={() => setPreviewImage(selectedExp.gallery ? selectedExp.gallery[0]?.src : selectedExp.image)}
+                  key={i} 
+                  className="modal-gallery-item"
+                  onClick={() => setPreviewImage(item.src)}
                   tabIndex={0}
                   role="button"
-                  aria-label={`View photo: ${selectedExp.companyName}`}
+                  aria-label={`View photo ${i + 1}: ${item.alt || selectedExp.companyName}`}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPreviewImage(item.src); }}
                 >
                   <ImageWithSkeleton 
-                    src={selectedExp.gallery ? selectedExp.gallery[0]?.src : selectedExp.image} 
-                    alt={selectedExp.companyName} 
+                    src={item.src} 
+                    alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`} 
                     wrapperClassName="bento-skeleton-wrap"
                     loading="lazy" 
-                    decoding="async"
+                    decoding="async" 
                   />
                   <div className="bento-hover-overlay">
-                    <Maximize2 size={18} color="#fff" />
+                    <Maximize2 size={20} color="#fff" />
                   </div>
                 </div>
-              )}
+              ))}
             </div>
           </div>
         </div>

@@ -410,16 +410,16 @@
   margin-top: 2px;
 }
 
-/* Bento Gallery Layout */
-.modal-gallery-bento {
+/* Modal Gallery Grid (Clean 2-Column Responsive Layout) */
+.modal-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
   margin-top: 1.75rem;
   width: 100%;
 }
 
-.bento-item {
+.modal-gallery-item {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -427,17 +427,19 @@
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  aspect-ratio: 16 / 10;
+  min-height: 220px;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bento-item:hover {
+.modal-gallery-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 0, 0, 0.5);
-  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.25), 0 4px 12px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
 
-.bento-item img {
+.modal-gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -445,7 +447,7 @@
   transition: transform 0.4s ease;
 }
 
-.bento-item:hover img {
+.modal-gallery-item:hover img {
   transform: scale(1.04);
 }
 
@@ -461,103 +463,20 @@
   backdrop-filter: blur(2px);
 }
 
-.bento-item:hover .bento-hover-overlay {
+.modal-gallery-item:hover .bento-hover-overlay {
   opacity: 1;
 }
 
-/* Garuda TV 7-Item Bento Grid Configuration */
-.bento-7-0 {
-  grid-column: span 7;
-  height: 240px;
-}
+@media (max-width: 680px) {
+  .modal-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 
-.bento-7-1 {
-  grid-column: span 5;
-  height: 240px;
-}
-
-.bento-7-2 {
-  grid-column: span 4;
-  height: 190px;
-}
-
-.bento-7-3 {
-  grid-column: span 4;
-  height: 190px;
-}
-
-.bento-7-4 {
-  grid-column: span 4;
-  height: 190px;
-}
-
-.bento-7-5 {
-  grid-column: span 6;
-  height: 260px;
-}
-
-.bento-7-6 {
-  grid-column: span 6;
-  height: 260px;
-}
-
-/* Sparks Preschool 2-Item Bento Configuration */
-.bento-2-0 {
-  grid-column: span 6;
-  height: 290px;
-}
-
-.bento-2-1 {
-  grid-column: span 6;
-  height: 290px;
-}
-
-/* TVRI 4-Item Bento Configuration */
-.bento-4-0 {
-  grid-column: span 6;
-  height: 270px;
-}
-
-.bento-4-1 {
-  grid-column: span 6;
-  height: 270px;
-}
-
-.bento-4-2 {
-  grid-column: span 6;
-  height: 270px;
-}
-
-.bento-4-3 {
-  grid-column: span 6;
-  height: 270px;
-}
-
-/* 3-Item Bento Configuration */
-.bento-3-0 {
-  grid-column: span 6;
-  height: 280px;
-}
-
-.bento-3-1 {
-  grid-column: span 6;
-  height: 280px;
-}
-
-.bento-3-2 {
-  grid-column: span 12;
-  height: 270px;
-}
-
-/* Single Item Fallback */
-.bento-single {
-  grid-column: span 12;
-  height: 380px;
-}
-
-.bento-single img {
-  object-fit: contain;
-  background: #0a0a0a;
+  .modal-gallery-item {
+    aspect-ratio: 16 / 10;
+    min-height: 180px;
+  }
 }
 
 /* Preview Lightbox */
