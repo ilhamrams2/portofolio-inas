@@ -4,10 +4,16 @@ import logoGarudaTV from '../assets/images/experience/logo/logo-garudatv.png';
 import logoUniv from '../assets/images/projects/univ.png';
 import logoJobhun from '../assets/images/projects/jobhun.png';
 
-// Garuda TV Live Report Images
+// Garuda TV Live & Field Report Images
 import garudaImg20 from '../assets/images/experience/garudatv/image 20.png';
 import garudaImg21 from '../assets/images/experience/garudatv/image 21.png';
+import garudaImg22 from '../assets/images/experience/garudatv/image 22.png';
 import garudaImg23 from '../assets/images/experience/garudatv/image 23.png';
+import garudaImg24 from '../assets/images/experience/garudatv/image 24.png';
+import garudaImg25 from '../assets/images/experience/garudatv/image 25.png';
+import garudaImg26 from '../assets/images/experience/garudatv/image 26.png';
+import asramaHajiImg from '../assets/images/experience/garudatv/asrama-haji.png';
+import gbkImg from '../assets/images/experience/inas-zhafirah-garudatv.png';
 
 import './ProjectsSection.css';
 
@@ -15,15 +21,15 @@ const projectsData = [
   {
     id: 1,
     title: 'JOURNALIST NEWS PORTFOLIO - GARUDA TV',
-    shortDesc: 'A showcase of live reporting, broadcast journalism, and news coverage at Garuda TV.',
+    shortDesc: 'A comprehensive portfolio of live reporting, breaking broadcast journalism, and field news coverage at Garuda TV.',
     logoImg: logoGarudaTV,
-    overview: 'As a television journalist, I was responsible for breaking news coverage, investigative reporting, scriptwriting, and live on-location broadcasts across major national political and social events.',
+    overview: 'As a television journalist, I was responsible for breaking news coverage, investigative reporting, scriptwriting, and live on-location broadcasts across major national political, social, sports, and economic events.',
     reports: [
       {
         id: 'rep-1',
         image: garudaImg20,
         title: 'Live Report - First Pretrial Hearing of Roy Suryo (South Jakarta District Court)',
-        description: 'Delivering real-time information to the public regarding the latest updates and proceedings of the alleged fake diploma case, which entered the first pretrial hearing phase for defendant Roy Suryo at the South Jakarta District Court.'
+        description: 'Delivering real-time information to the public regarding the latest situation and proceedings of the alleged fake diploma case, covering the first pretrial hearing for defendant Roy Suryo at the South Jakarta District Court.'
       },
       {
         id: 'rep-2',
@@ -33,9 +39,45 @@ const projectsData = [
       },
       {
         id: 'rep-3',
+        image: garudaImg22,
+        title: 'Live Report - Gambir Railway Station Jakarta',
+        description: 'Delivering real-time public updates on the post-Eid return flow (H+7 / Peak Eid al-Fitr return traffic) on day 3 at Gambir Railway Station, Jakarta.'
+      },
+      {
+        id: 'rep-4',
+        image: asramaHajiImg,
+        title: 'Live Report - Jakarta Hajj Embarkation Center',
+        description: 'Delivering timely information to the public regarding the departure of Batch I (Kloter 1) Jakarta Embarkation Hajj Pilgrims and attending the central PPIH press conference by the Ministry of Religious Affairs.'
+      },
+      {
+        id: 'rep-5',
+        image: garudaImg24,
+        title: 'Live Report - Military Court II Jakarta (Pengadilan Militer II)',
+        description: 'Delivering real-time public updates on the trial proceedings and legal developments regarding the chemical assault case against a human rights activist (KontraS).'
+      },
+      {
+        id: 'rep-6',
+        image: garudaImg25,
+        title: 'Report - Dewa United Arena Banten',
+        description: 'Covering the intensive team preparations and media day for Dewa United Basketball ahead of the BCL Asia-East 2026 tournament.'
+      },
+      {
+        id: 'rep-7',
+        image: garudaImg26,
+        title: 'Report - Ministry of Finance Jakarta',
+        description: 'Covering the official APBN KiTa 2026 National Budget Press Conference and economic briefing led by the Minister of Finance in Jakarta.'
+      },
+      {
+        id: 'rep-8',
+        image: gbkImg,
+        title: 'Report - Gelora Bung Karno Main Stadium (GBK)',
+        description: 'Covering the stadium management team\'s readiness and ongoing facility upgrades at Gelora Bung Karno ahead of the FIFA Series 2026.'
+      },
+      {
+        id: 'rep-9',
         image: garudaImg23,
         title: 'Live Report - Jakarta City Hall (Balaikota DKI Jakarta)',
-        description: 'Delivering live field updates on municipal governance, metropolitan developments, and press briefings directly from Jakarta City Hall for the Laporan 8 Siang broadcast.'
+        description: 'Delivering live field updates on municipal governance, metropolitan public policies, and press conferences directly from Jakarta City Hall for the Laporan 8 Siang broadcast.'
       }
     ],
     keyResponsibilities: [
@@ -145,7 +187,7 @@ function ProjectsSection() {
               {/* Specific Live Reports Layout (Garuda TV style) */}
               {selectedProject.reports && selectedProject.reports.length > 0 && (
                 <div className="project-reports-container">
-                  <h4 className="reports-section-title">Featured Broadcasts & Live Reports</h4>
+                  <h4 className="reports-section-title">Featured Broadcasts & Live Reports ({selectedProject.reports.length})</h4>
                   <div className="reports-list">
                     {selectedProject.reports.map((report) => (
                       <div key={report.id} className="report-item-card">
@@ -223,4 +265,5 @@ function ProjectsSection() {
 }
 
 export default ProjectsSection;
+
 

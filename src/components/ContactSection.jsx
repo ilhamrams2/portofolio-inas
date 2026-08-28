@@ -27,8 +27,8 @@ function ContactSection() {
               <div>
                 <h4>EMAIL</h4>
                 <p>
-                  <a href="mailto:inaswork@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Send email to inaswork@gmail.com">
-                    inaswork@gmail.com
+                  <a href="mailto:inaszha.work@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Send email to inaszha.work@gmail.com">
+                    inaszha.work@gmail.com
                   </a>
                 </p>
               </div>
@@ -48,7 +48,9 @@ function ContactSection() {
               <MapPin className="info-icon" />
               <div>
                 <h4>LOCATION</h4>
-                <p>Depok, West Java, Indonesia</p>
+                <p style={{ margin: 0, lineHeight: '1.6' }}>Depok, West Java</p>
+                <p style={{ margin: 0, lineHeight: '1.6' }}>Bogor, West Java</p>
+                <p style={{ margin: 0, lineHeight: '1.6' }}>Jakarta, Indonesia</p>
               </div>
             </div>
           </div>

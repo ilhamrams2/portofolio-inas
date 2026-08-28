@@ -44,9 +44,9 @@ function Footer() {
           <div className="footer-col">
             <h4 className="footer-col-title">LOCATION</h4>
             <ul className="footer-links">
-              <li>Jakarta, Indonesia</li>
               <li>Depok, West Java</li>
-              <li>Cimanggis, Indonesia</li>
+              <li>Bogor, West Java</li>
+              <li>Jakarta, Indonesia</li>
             </ul>
           </div>
 
@@ -54,8 +54,8 @@ function Footer() {
             <h4 className="footer-col-title">DIRECT CONTACT</h4>
             <ul className="footer-links">
               <li>
-                <a href="mailto:inaswork@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Email Inas Zhafirah">
-                  inaswork@gmail.com
+                <a href="mailto:inaszha.work@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }} aria-label="Email Inas Zhafirah">
+                  inaszha.work@gmail.com
                 </a>
               </li>
               <li>
