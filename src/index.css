@@ -143,19 +143,48 @@ body {
 
 .nav-links a {
   font-family: 'JetBrains Mono', monospace;
-  color: var(--text-secondary);
+  color: #888888;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: color 0.3s;
+  transition: all 0.25s ease;
   position: relative;
+  padding: 4px 0;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--text-primary);
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a.active:not(.cv-btn) {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.nav-links a.active:not(.cv-btn)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.9), 0 0 4px #ff0000;
+  border-radius: 2px;
+  animation: navUnderlineSlide 0.25s ease-out forwards;
+}
+
+@keyframes navUnderlineSlide {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
 .nav-links a.cv-btn {

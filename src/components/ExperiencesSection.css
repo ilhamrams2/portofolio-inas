@@ -267,10 +267,22 @@
   align-items: center;
 }
 
-.modal-company-logo {
-  height: 55px;
-  object-fit: contain;
+.modal-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 1.25rem;
+  min-height: 46px;
+}
+
+.modal-center-logo,
+.modal-company-logo {
+  height: 46px;
+  max-height: 48px;
+  max-width: 170px;
+  width: auto;
+  object-fit: contain;
+  display: block;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 

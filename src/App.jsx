@@ -15,14 +15,15 @@ function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [navbarHidden, setNavbarHidden] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const lastScrollY = useRef(0);
 
   useEffect(() => {
-    AOS.init({ 
-      duration: 1000, 
+    AOS.init({
+      duration: 1000,
       once: true,
       offset: 50,
-      disable: function() {
+      disable: function () {
         return window.innerWidth <= 768;
       }
     });
@@ -51,9 +52,27 @@ function App() {
       }
 
       lastScrollY.current = currentScrollY;
+
+      // Scrollspy detection
+      const sections = ['home', 'about', 'experiences', 'projects', 'certification', 'contact'];
+      if (window.innerHeight + currentScrollY >= document.documentElement.scrollHeight - 80) {
+        setActiveSection('contact');
+      } else {
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sections[i]);
+          if (el) {
+            const top = el.offsetTop;
+            if (currentScrollY >= top - 220) {
+              setActiveSection(sections[i]);
+              break;
+            }
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check on mount
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -68,7 +87,10 @@ function App() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = (sectionId) => {
+    if (sectionId) {
+      setActiveSection(sectionId);
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -78,11 +100,11 @@ function App() {
         <div className="container">
           <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${navbarHidden ? 'navbar-hidden' : ''}`} aria-label="Main Navigation">
             <div className="nav-container">
-              <a href="#home" className="logo" style={{ textDecoration: 'none' }}>INAS ZHAFIRAH</a>
-              
+              <a href="#home" className="logo" style={{ textDecoration: 'none' }} onClick={() => handleNavClick('home')}>INAS ZHAFIRAH</a>
+
               {/* Hamburger Button */}
-              <button 
-                className="mobile-menu-btn" 
+              <button
+                className="mobile-menu-btn"
                 onClick={toggleMobileMenu}
                 aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={isMobileMenuOpen}
@@ -91,13 +113,13 @@ function App() {
               </button>
 
               <div className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-                <a href="#home" className="active" onClick={handleNavClick}>HOME</a>
-                <a href="#about" onClick={handleNavClick}>ABOUT ME</a>
-                <a href="#experiences" onClick={handleNavClick}>EXPERIENCES</a>
-                <a href="#projects" onClick={handleNavClick}>PROJECTS</a>
-                <a href="#certification" onClick={handleNavClick}>CERTIFICATION</a>
-                <a href="#contact" onClick={handleNavClick}>CONTACT</a>
-                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn" onClick={handleNavClick} aria-label="Download Curriculum Vitae PDF">DOWNLOAD CV</a>
+                <a href="#home" className={activeSection === 'home' ? 'active' : ''} onClick={() => handleNavClick('home')}>HOME</a>
+                <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => handleNavClick('about')}>ABOUT ME</a>
+                <a href="#experiences" className={activeSection === 'experiences' ? 'active' : ''} onClick={() => handleNavClick('experiences')}>EXPERIENCES</a>
+                <a href="#projects" className={activeSection === 'projects' ? 'active' : ''} onClick={() => handleNavClick('projects')}>PROJECTS</a>
+                <a href="#certification" className={activeSection === 'certification' ? 'active' : ''} onClick={() => handleNavClick('certification')}>CERTIFICATION</a>
+                <a href="#contact" className={activeSection === 'contact' ? 'active' : ''} onClick={() => handleNavClick('contact')}>CONTACT</a>
+                <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="cv-btn" onClick={() => handleNavClick()} aria-label="Download Curriculum Vitae PDF">DOWNLOAD CV</a>
               </div>
             </div>
           </nav>
@@ -111,10 +133,7 @@ function App() {
               </div>
 
               <p className="description" style={{ marginTop: '220px' }}>
-                I am a Communication Professional and Education Enthusiast with a background
-                in Journalism, Broadcasting, and Film. With experience in television journalism,
-                education, content production, and strategic communication, I bring together
-                storytelling, creativity, and meaningful communication.
+                I am a Communication Professional with a multidisciplinary background in Journalism, Creative, Broadcasting & Film, Production, Copywriting, and Education. I bring together storytelling, creativity, and strategic communication to deliver impactful content and meaningful learning experiences.
               </p>
 
               <button className="cta-btn" onClick={() => window.location.href = '#about'} aria-label="Know more about Inas Zhafirah">
@@ -122,15 +141,15 @@ function App() {
               </button>
             </div>
 
-            <img 
-              src={personImg} 
-              alt="Inas Zhafirah - Broadcast Journalist and Media Specialist" 
-              className="person-image" 
+            <img
+              src={personImg}
+              alt="Inas Zhafirah - Broadcast Journalist and Media Specialist"
+              className="person-image"
               loading="eager"
               decoding="async"
               fetchPriority="high"
-              data-aos="fade-left" 
-              data-aos-delay="200" 
+              data-aos="fade-left"
+              data-aos-delay="200"
             />
           </main>
         </div>
