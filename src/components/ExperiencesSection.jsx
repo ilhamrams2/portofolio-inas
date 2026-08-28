@@ -274,6 +274,7 @@ function ExperiencesSection() {
                     decoding="async"
                   />
                 </div>
+                <h3 className="card-company-name">{exp.companyName}</h3>
                 <p className="card-desc">{exp.description}</p>
                 <button 
                   className="cta-btn small-btn" 
