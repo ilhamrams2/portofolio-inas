@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Maximize2, X } from 'lucide-react';
 import backshape1 from '../assets/images/experience/backshape1.png';
+import ImageWithSkeleton from './ImageWithSkeleton';
 import './CertificationsSection.css';
 
 // Import certification images
@@ -216,10 +217,11 @@ function CertificationsSection() {
                   aria-label={`View certificate: ${cert.title}`}
                 >
                   <div className="cert-image-container">
-                    <img 
+                    <ImageWithSkeleton 
                       src={cert.img} 
                       alt={`${cert.title} - ${cert.issuer}`} 
                       className="cert-img" 
+                      wrapperClassName="cert-skeleton-wrap"
                       loading="lazy" 
                       decoding="async"
                     />
@@ -276,10 +278,11 @@ function CertificationsSection() {
               <X size={24} color="#ffffff" />
             </button>
             <div className="cert-modal-image-wrapper">
-              <img 
+              <ImageWithSkeleton 
                 src={selectedCert.img} 
                 alt={`${selectedCert.title} - ${selectedCert.issuer}`} 
                 className="cert-modal-image" 
+                wrapperClassName="cert-modal-skeleton-wrap"
                 decoding="async"
               />
             </div>

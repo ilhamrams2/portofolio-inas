@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tv, Film, Mic, BookOpen, Lightbulb, Users, Edit3, ArrowRight } from 'lucide-react';
 import aboutImg from '../assets/images/about-me/inas-zhafirah-about.png';
+import ImageWithSkeleton from './ImageWithSkeleton';
 import './AboutSection.css';
 
 const tags = [
@@ -26,10 +27,11 @@ function AboutSection() {
           </div>
           <div className="image-wrapper">
             <div className="red-block-bg"></div>
-            <img 
+            <ImageWithSkeleton 
               src={aboutImg} 
               alt="Inas Zhafirah - Communication Professional, TV Reporter and Duta Baca Depok" 
               className="about-image" 
+              wrapperClassName="about-img-skeleton-wrap"
               loading="lazy"
               decoding="async"
             />

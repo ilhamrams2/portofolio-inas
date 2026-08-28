@@ -1,0 +1,86 @@
+.skeleton-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background-color: #161616;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+/* Skeleton Shimmer Animation (Modern Glowing Shimmer Wave - No circular spinners!) */
+.skeleton-shimmer-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    #141414 0%,
+    #222222 25%,
+    rgba(255, 0, 0, 0.12) 50%,
+    #222222 75%,
+    #141414 100%
+  );
+  background-size: 250% 100%;
+  animation: skeletonShimmerWave 1.6s infinite ease-in-out;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Subtle glowing accent bar sliding across the bottom while loading */
+.skeleton-glow-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2.5px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #ff0000, #ff4444, transparent);
+  background-size: 200% 100%;
+  animation: skeletonGlowSlide 1.4s infinite linear;
+  z-index: 2;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+@keyframes skeletonShimmerWave {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes skeletonGlowSlide {
+  0% {
+    background-position: -150% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+/* Image states */
+.skeleton-img-element {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.skeleton-img-element.is-loaded {
+  opacity: 1;
+}
+
+/* Specific Wrapper Classes */
+.experience-skeleton-wrap,
+.bento-skeleton-wrap,
+.preview-lightbox-skeleton-wrap,
+.cert-skeleton-wrap,
+.cert-modal-skeleton-wrap,
+.report-img-skeleton-wrap,
+.proj-modal-skeleton-wrap,
+.about-img-skeleton-wrap {
+  border-radius: 8px;
+}
+

@@ -3,6 +3,7 @@ import backshape1 from '../assets/images/experience/backshape1.png';
 import logoGarudaTV from '../assets/images/experience/logo/logo-garudatv.png';
 import logoUniv from '../assets/images/projects/univ.png';
 import logoJobhun from '../assets/images/projects/jobhun.png';
+import ImageWithSkeleton from './ImageWithSkeleton';
 
 // Garuda TV Live & Field Report Images
 import garudaImg20 from '../assets/images/experience/garudatv/image 20.png';
@@ -196,10 +197,11 @@ function ProjectsSection() {
                           onClick={() => setPreviewImage(report.image)}
                           title="Click to view full image"
                         >
-                          <img 
+                          <ImageWithSkeleton 
                             src={report.image} 
                             alt={report.title} 
                             className="report-image"
+                            wrapperClassName="report-img-skeleton-wrap"
                             loading="lazy"
                           />
                           <div className="report-img-overlay">
@@ -256,7 +258,12 @@ function ProjectsSection() {
             >
               ✕
             </button>
-            <img src={previewImage} alt="Live Report Full Preview" className="proj-modal-image" />
+            <ImageWithSkeleton 
+              src={previewImage} 
+              alt="Live Report Full Preview" 
+              className="proj-modal-image"
+              wrapperClassName="proj-modal-skeleton-wrap"
+            />
           </div>
         </div>
       )}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Mic, BookOpen, User, X, Maximize2, MapPin, Calendar, Briefcase, CheckCircle2 } from 'lucide-react';
 import backshape1 from '../assets/images/experience/backshape1.png';
 import backshape2 from '../assets/images/experience/backshape2.png';
+import ImageWithSkeleton from './ImageWithSkeleton';
 import './ExperiencesSection.css';
 
 import exp1 from '../assets/images/experience/inas-zhafirah-garudatv.png';
@@ -247,10 +248,11 @@ function ExperiencesSection() {
           {experiencesData.map((exp, idx) => (
             <div className="experience-card" key={exp.id} data-aos="fade-up" data-aos-delay={`${idx * 100}`}>
               <div className="card-image-wrapper">
-                <img 
+                <ImageWithSkeleton 
                   src={exp.image} 
                   alt={`${exp.companyName} - ${exp.role} by Inas Zhafirah`} 
                   className="experience-image" 
+                  wrapperClassName="experience-skeleton-wrap"
                   loading="lazy"
                   decoding="async"
                 />
@@ -299,23 +301,29 @@ function ExperiencesSection() {
               <X size={24} />
             </button>
             
+            {/* Modal Header Area */}
             <div className="modal-header-centered">
-              <img 
-                src={selectedExp.companyLogo} 
-                alt={`${selectedExp.companyName} Logo`} 
-                className="modal-company-logo" 
-                loading="lazy"
-                decoding="async"
-              />
-              
-              <div className="modal-meta-badges">
-                <span className="modal-role-badge">
-                  <span className="badge-icon-wrap">{selectedExp.icon}</span>
-                  {selectedExp.role}
-                </span>
-                {selectedExp.employmentType && (
+              <div className="modal-logo-container">
+                <img 
+                  src={selectedExp.companyLogo} 
+                  alt={`${selectedExp.companyName} Logo`} 
+                  className="modal-center-logo" 
+                  loading="lazy" 
+                  decoding="async" 
+                />
+              </div>
+
+              {/* Dynamic Metadata Pills */}
+              <div className="modal-meta-pills-row">
+                {selectedExp.role && (
                   <span className="modal-meta-pill">
                     <Briefcase size={13} />
+                    {selectedExp.role}
+                  </span>
+                )}
+                {selectedExp.employmentType && (
+                  <span className="modal-meta-pill">
+                    <User size={13} />
                     {selectedExp.employmentType}
                   </span>
                 )}
@@ -365,9 +373,10 @@ function ExperiencesSection() {
                     aria-label={`View photo ${i + 1}: ${item.alt || selectedExp.companyName}`}
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPreviewImage(item.src); }}
                   >
-                    <img 
+                    <ImageWithSkeleton 
                       src={item.src} 
                       alt={item.alt || `${selectedExp.companyName} Gallery image ${i + 1}`} 
+                      wrapperClassName="bento-skeleton-wrap"
                       loading="lazy" 
                       decoding="async"
                     />
@@ -384,10 +393,11 @@ function ExperiencesSection() {
                   role="button"
                   aria-label={`View photo: ${selectedExp.companyName}`}
                 >
-                  <img 
+                  <ImageWithSkeleton 
                     src={selectedExp.gallery ? selectedExp.gallery[0]?.src : selectedExp.image} 
                     alt={selectedExp.companyName} 
-                    loading="lazy"
+                    wrapperClassName="bento-skeleton-wrap"
+                    loading="lazy" 
                     decoding="async"
                   />
                   <div className="bento-hover-overlay">
@@ -411,10 +421,11 @@ function ExperiencesSection() {
             >
               <X size={24} color="#ffffff" />
             </button>
-            <img 
+            <ImageWithSkeleton 
               src={previewImage} 
               alt="Fullscreen experience documentation preview" 
               className="preview-lightbox-img" 
+              wrapperClassName="preview-lightbox-skeleton-wrap"
               decoding="async"
             />
           </div>
@@ -426,5 +437,4 @@ function ExperiencesSection() {
 }
 
 export default ExperiencesSection;
-
 
